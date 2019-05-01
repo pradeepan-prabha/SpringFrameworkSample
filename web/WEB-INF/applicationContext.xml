@@ -32,7 +32,7 @@
 
    <!-- Definition for studentJDBCTemplate bean -->
    <bean id = "studentJDBCTemplate" 
-      class = "com.chakra.rest.test">
+      class = "com.chakra.rest.test.StudentJDBCTemplate">
       <property name = "dataSource" ref = "dataSource" />    
    </bean>
    

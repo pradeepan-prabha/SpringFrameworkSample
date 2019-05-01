@@ -27,7 +27,7 @@ import org.springframework.messaging.Message;
  */
 @Path("generic")
 public class GenericResource {
-
+    
     @Context
     private UriInfo context;
 
@@ -47,7 +47,7 @@ public class GenericResource {
     @Path("getText")
     @Produces(MediaType.TEXT_PLAIN)
     public String getXml() {
-
+        
         try {
 
             //Just I am passed dummy information
@@ -56,18 +56,20 @@ public class GenericResource {
             String message = "Welcome to FCM Server push notification!.";
             //Method to send Push Notification
             send_FCM_Notification(tokenId, server_key, message);
+   //         EmailUtility emailUtility = new EmailUtility();
+ //           emailUtility.sendEmailWithAttachment(message, tokenId, message, message, tokenId, message, message);
 
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/restfullwebtestdb", "root", "");
-            //here sonoo is database name, root is username and password  
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from studentdetails");
-            while (rs.next()) {
-                System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));
-                return rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3);
-            }
-            con.close();
+//            Class.forName("com.mysql.jdbc.Driver");
+//            Connection con = DriverManager.getConnection(
+//                    "jdbc:mysql://localhost:3306/restfullwebtestdb", "root", "");
+//            //here sonoo is database name, root is username and password  
+//            Statement stmt = con.createStatement();
+//            ResultSet rs = stmt.executeQuery("select * from studentdetails");
+//            while (rs.next()) {
+//                System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));
+//                return rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3);
+//            }
+//            con.close();
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -85,5 +87,5 @@ public class GenericResource {
     @Consumes(MediaType.TEXT_PLAIN)
     public void putXml(String content) {
     }
-
+    
 }
