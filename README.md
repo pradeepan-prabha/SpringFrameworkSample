@@ -1,2 +1,2 @@
-# SpringFrameworkSample
-Sample mysql using Spring, JDBC using java, JDBC using Spring framework, FCM send to single device
+# SpringFramework Sample
+Sample mysql using Spring Framework, JDBC using java, JDBC using Spring Framework, FCM send to single device
